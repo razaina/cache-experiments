@@ -1,0 +1,75 @@
+taille bloc : 1, nb_cycles : 16777216
+Duree par acces lecture  : 5.67
+Duree par acces ecriture : 4.19
+taille bloc : 2, nb_cycles : 8388608
+Duree par acces lecture  : 3.31
+Duree par acces ecriture : 3.83
+taille bloc : 4, nb_cycles : 4194304
+Duree par acces lecture  : 2.48
+Duree par acces ecriture : 3.94
+taille bloc : 8, nb_cycles : 2097152
+Duree par acces lecture  : 2.67
+Duree par acces ecriture : 4.18
+taille bloc : 16, nb_cycles : 1048576
+Duree par acces lecture  : 2.77
+Duree par acces ecriture : 4.3
+taille bloc : 32, nb_cycles : 524288
+Duree par acces lecture  : 3.36
+Duree par acces ecriture : 4.41
+taille bloc : 64, nb_cycles : 262144
+Duree par acces lecture  : 3.7
+Duree par acces ecriture : 4.28
+taille bloc : 128, nb_cycles : 131072
+Duree par acces lecture  : 2.99
+Duree par acces ecriture : 4.17
+taille bloc : 256, nb_cycles : 65536
+Duree par acces lecture  : 2.97
+Duree par acces ecriture : 4.14
+taille bloc : 512, nb_cycles : 32768
+Duree par acces lecture  : 2.94
+Duree par acces ecriture : 4.17
+taille bloc : 1024, nb_cycles : 16384
+Duree par acces lecture  : 2.92
+Duree par acces ecriture : 4.58
+taille bloc : 2048, nb_cycles : 8192
+Duree par acces lecture  : 2.93
+Duree par acces ecriture : 4.11
+taille bloc : 4096, nb_cycles : 4096
+Duree par acces lecture  : 2.94
+Duree par acces ecriture : 4.11
+taille bloc : 8192, nb_cycles : 2048
+Duree par acces lecture  : 3.46
+Duree par acces ecriture : 4.63
+taille bloc : 16384, nb_cycles : 1024
+Duree par acces lecture  : 4.60
+Duree par acces ecriture : 5.79
+taille bloc : 32768, nb_cycles : 512
+Duree par acces lecture  : 5.8
+Duree par acces ecriture : 6.26
+taille bloc : 65536, nb_cycles : 256
+Duree par acces lecture  : 5.17
+Duree par acces ecriture : 6.48
+taille bloc : 131072, nb_cycles : 128
+Duree par acces lecture  : 5.41
+Duree par acces ecriture : 6.66
+taille bloc : 262144, nb_cycles : 64
+Duree par acces lecture  : 6.52
+Duree par acces ecriture : 6.48
+taille bloc : 524288, nb_cycles : 32
+Duree par acces lecture  : 5.28
+Duree par acces ecriture : 6.96
+taille bloc : 1048576, nb_cycles : 16
+Duree par acces lecture  : 5.31
+Duree par acces ecriture : 6.76
+taille bloc : 2097152, nb_cycles : 8
+Duree par acces lecture  : 5.30
+Duree par acces ecriture : 6.75
+taille bloc : 4194304, nb_cycles : 4
+Duree par acces lecture  : 5.29
+Duree par acces ecriture : 6.79
+taille bloc : 8388608, nb_cycles : 2
+Duree par acces lecture  : 5.30
+Duree par acces ecriture : 6.74
+taille bloc : 16777216, nb_cycles : 1
+Duree par acces lecture  : 5.32
+Duree par acces ecriture : 6.76
