@@ -1,10 +1,14 @@
 #! /bin/sh
 
-FIC_RESULTATS="resultats/sequentiels.txt"
-FIC_DATA_READ="resultats/read-sequentiels.txt"
-FIC_DATA_WRITE="resultats/write-sequentiels.txt"
-FIC_GRAPHIQUE="resultats/graph-sequentiel.png"
+FIC_RESULTATS="resultats/seq.txt"
+FIC_DATA_READ="resultats/read-seq.txt"
+FIC_DATA_WRITE="resultats/write-seq.txt"
+FIC_GRAPHIQUE="resultats/graph-seq.png"
 
+#FIC_RESULTATS="resultats/random.txt"
+#FIC_DATA_READ="resultats/read-rand.txt"
+#FIC_DATA_WRITE="resultats/write-rand.txt"
+#FIC_GRAPHIQUE="resultats/graph-rand.png"
 #> "$FIC_RESULTATS"
 
 #N=1
@@ -26,16 +30,23 @@ FIC_GRAPHIQUE="resultats/graph-sequentiel.png"
 
 gnuplot <<-EOF
     reset
-    set terminal png size 1200,800
-    set grid
+    set style line 1 linetype 1 pointtype 6 linewidth 2 linecolor 6 pointsize 2
+    set style line 2 linetype 1 pointtype 6 linewidth 2 linecolor 7 pointsize 2
+    set terminal png transparent nocrop enhanced truecolor size 800,400
     set mxtics 10 
     set output '$FIC_GRAPHIQUE'
-    set multiplot layout 2,1
-    set xlabel "log2(nombre de blocs)'
-    set ylabel 'duree boucle (ns)
-    set style function linespoints
-    set format x "2^%g"
-    plot "$FIC_DATA_WRITE" w lp lt -1 pi -1 pt 6 lc rgb '#FF0000'
-    plot "$FIC_DATA_READ" w lp lt -1 pi -1 pt 17 lc rgb '#0000FF'
+    set multiplot 
+    set title "Random reads"
+    set grid
+
+    set xlabel "Working set size (bytes)"
+    set ylabel 'Timing (ns)'
+    set format x "2^{%g}"
+    set arrow from 13,2 to 13,6.5 nohead lc rgb 'blue'
+    set arrow from 17,2 to 17,6.5 nohead lc rgb 'red'
+    plot "$FIC_DATA_READ" w lp lt -1 pi -1 pt 6 lc rgb '#000000' notitle 
+
     unset multiplot
 EOF
+    #plot "$FIC_DATA_READ" w lp lt -1 pi -1 pt 17 lc rgb '#0000FF' t "Sequential writes"
+    #set arrow from 13,3.5 to 13,8 nohead lc rgb 'blue'
