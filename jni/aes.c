@@ -24,7 +24,6 @@ int main(int argc, char *argv[])
     int r;
     int numBlocks;
     BYTE block[BLOCK_SIZE];
-    BYTE output[BLOCK_SIZE];
     char keyMaterial[320];
     keyInstance keyInst;
     cipherInstance cipherInst;
@@ -56,14 +55,33 @@ int main(int argc, char *argv[])
     int i,j;
 
     //MODE ECB
+    struct timeval t1, t2;
+    long long int timing;
+    FILE *fd = cyclecounter_open();
+
     for(j = 0; j < 100000; j++)
     {
+        BYTE output[BLOCK_SIZE];
+        cyclecounter_flushall();
+
+        gettimeofday(&t1, NULL);
         for (i = numBlocks; i > 0; i--) {
             rijndaelEncrypt((&keyInst)->rk, (&keyInst)->Nr, plaintextCandidat, output);
             *(plaintextCandidat) += 16;
             *(output) += 16;
         }
+        gettimeofday(&t2, NULL);
+
+        timing = t2.tv_sec - t1.tv_sec;
+        timing *= 1000000;
+        timing += t2.tv_usec - t1.tv_usec;
+
+        fprintf(stdout, "%lld\n", timing);
+
+        plaintextCandidat = calloc(BLOCK_SIZE, sizeof(BYTE));
     }
 
+    cyclecounter_flushall();
+    cyclecounter_close(fd);
     return 0;
 }
